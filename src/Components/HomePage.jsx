@@ -36,7 +36,7 @@ function HomePage(){
             <div className="flex justify-center pb-[150px] gap-[100px]">
                 <div>
                 <p className="text-[35px] pt-[50px] pb-[10px]">Get in touch</p>
-                <p className="w-[400px] text-[20px] pb-[15px]">If you'd like to know more about our services, give us a call or send us an email!</p>
+                <p className="w-[400px] text-[20px] pb-[15px]">If you'd like to know more about our services, send us an email or give us a call!</p>
                 <p>ILoveCoffee@cofee.com{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}|{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}  0612345678</p>
                 </div>
                 <img src="../Images/Contact.png" className="h-[360px]"/>
