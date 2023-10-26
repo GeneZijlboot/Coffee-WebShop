@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.HyperLink{
+    @apply  text-[35px];
+}
