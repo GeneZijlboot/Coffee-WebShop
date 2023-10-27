@@ -8,7 +8,7 @@ function Shop() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users', {mode: 'cors'})
+        fetch('https://fake-coffee-api.vercel.app/api', {mode: 'cors'})
             .then(res => {
                 return res.json();
             })
@@ -26,9 +26,9 @@ function Shop() {
 
     return (
         <div>
-            <div className="bg-[#f4f4f4]">
-                {isPending && <div className='flex justify-center text-[25px] mt-[35px] pt-[200px] pb-[250px]'>Loading...</div>}
-                {error && <div className='flex justify-center text-[25px] mt-[35px] pt-[200px] pb-[250px]'>A network error was encountered!</div>}
+            {isPending && <div className='bg-[#f4f4f4] flex justify-center text-[30px] mt-[35px] pt-[300px] pb-[300px]'>Loading...</div>}
+            {error && <div className='bg-[#f4f4f4] flex justify-center text-[30px] mt-[35px] pt-[300px] pb-[300px]'>A network error was encountered!</div>}
+            <div className="grid grid-cols-3 bg-[#f4f4f4] mt-[30px]">
                 <ProductCard users={users} />
             </div>
             <div>
