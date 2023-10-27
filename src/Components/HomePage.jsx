@@ -8,7 +8,7 @@ function HomePage(){
                 <img src="../Images/CoffeeShop.png" className="h-[300px]" />
                 <div className="HPtxt">
                     <p className="text-[35px]">Welcome,</p>
-                    <p>my fellow coffee addicts!</p>
+                    <p>my fellow caffeine addicts!</p>
                     <p>Dive into the world of exceptional beans.</p>
                     <p>Your coffee adventure starts right here!</p>
                 </div>

@@ -1,28 +1,9 @@
-import { useState , useEffect } from 'react';
 import ProductCard from '../Products/ProductCard';
 import Copyright from './Copyright';
+import useFetch from '../useFetch';
 
 function Shop() {
-    const [users, setUsers] = useState([]);
-    const [isPending, setIsPending] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        fetch('https://fake-coffee-api.vercel.app/api', {mode: 'cors'})
-            .then(res => {
-                return res.json();
-            })
-            .then(data => {
-                console.log(data);
-                setUsers(data)
-                setIsPending(false);
-                setError(null);
-            })
-            .catch(err => {
-                setIsPending(false);
-                setError(err.message);
-            })
-    }, []);
+    const { users, error, isPending } = useFetch('https://fake-coffee-api.vercel.app/api');
 
     return (
         <div>
