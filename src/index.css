@@ -5,6 +5,7 @@
 body{
     @apply font-[sans] bg-[#8aaac7];
 }
+
 .HyperLink{
     @apply  text-[35px] text-white;
 }
