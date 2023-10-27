@@ -1,39 +1,36 @@
-import { useState, useEffect } from 'react';
+import { useState , useEffect } from 'react';
+import ProductCard from '../Products/ProductCard';
 import Copyright from './Copyright';
 
 function Shop() {
-    const [ispending, setIspending] = useState(true);
+    const [users, setUsers] = useState([]);
+    const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://github.com/ashleypatricks/coffee', {
-            method:'GET'
-        })
-        .then((res) => {
-            if(!res.ok){
-                throw Error('Could not fetch the data for that resource');
-            }
-            return res.json();
-        })
-        .then((data) => {
-            console.log(data);
-            setIspending(false);
-            setError(null);
-        })
-        .catch((error) => {
-            console.log(error);
-            setError(error);
-            setIspending(false);
-        });
-    }, [])
+        fetch('https://jsonplaceholder.typicode.com/users', {mode: 'cors'})
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                console.log(data);
+                setUsers(data)
+                setIsPending(false);
+                setError(null);
+            })
+            .catch(err => {
+                setIsPending(false);
+                setError(err.message);
+            })
+    }, []);
 
     return (
         <div>
             <div className="bg-[#f4f4f4]">
-                <p className="flex justify-center mt-[200px]">on the Shop Page</p>
+                {isPending && <div className='flex justify-center text-[25px] mt-[35px] pt-[200px] pb-[250px]'>Loading...</div>}
+                {error && <div className='flex justify-center text-[25px] mt-[35px] pt-[200px] pb-[250px]'>A network error was encountered!</div>}
+                <ProductCard users={users} />
             </div>
-            
-            {/* COPYRIGHT SECTION*/}
             <div>
                 <Copyright />
             </div>
