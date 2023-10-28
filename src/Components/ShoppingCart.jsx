@@ -11,7 +11,11 @@ function ShoppingCart() {
                     return ( display ShoppingCart items);
                 }
             */}
-            <Link className="flex justify-center bg-white text-[35px] mt-[35px] pt-[200px] pb-[300px]" to="/Shop">No Items Go back to Shop</Link>
+            <Link to="/Shop">
+                <div className="flex justify-center text-[35px] mt-[35px] pt-[200px] pb-[300px]">
+                    <button className="bg-red">Go back to Shop</button>
+                </div>
+            </Link>
             
             {/* COPYRIGHT SECTION*/}
             <div>

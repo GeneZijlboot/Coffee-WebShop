@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-    @apply font-[sans] bg-[#8aaac7];
+    @apply font-[sans] bg-[#f4f4f4];
 }
 
 .HyperLink{
@@ -24,4 +24,12 @@ body{
 
 .Copyright:hover{
     @apply flex justify-center text-[#24415b] text-[25px];
+}
+
+.Button{
+    @apply bg-[#8aaac7]  text-[white] w-[100px] h-[40px] rounded-[15px];
+}
+
+.Button:hover{
+    @apply bg-[#8aaac7]  text-[#24415b];
 }
