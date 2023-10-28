@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
-    const [users, setUsers] = useState([]);
+    const [Coffee, setCoffee] = useState([]);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://fake-coffee-api.vercel.app/api', {mode: 'cors'})
+        fetch(url, {mode: 'cors'})
             .then(res => {
                 return res.json();
             })
             .then(data => {
                 console.log(data);
-                setUsers(data)
+                setCoffee(data)
                 setIsPending(false);
                 setError(null);
             })
@@ -22,7 +22,7 @@ const useFetch = (url) => {
             })
     }, []);
 
-    return {users, isPending, error}
+    return {Coffee, isPending, error}
 }
 
 export default useFetch;

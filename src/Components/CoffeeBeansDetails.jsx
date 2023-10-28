@@ -1,34 +1,26 @@
+import useFetch from '../useFetch';
 import { useParams }  from 'react-router-dom';
-import useFetch from './useFetch';
-import { useHistory } from 'react-router-dom';
 
-function BlogDetails() {
+function CoffeeBeansDetails() {
     const { id } = useParams()
-    const { data: blog, error, ispending } = useFetch('http://localhost:8000/blogs/' + id);
-    const history = useHistory();
-
-    const handleClick = () =>{
-        fetch('http://localhost:8000/blogs/'+ blog.id, {
-            method: 'DELETE'
-        }).then(() => {
-            history.push('/');
-        })
-    }
+    const { Coffee, error, isPending } = useFetch('https://fake-coffee-api.vercel.app/api/' + id);
 
     return (  
-        <div className="blog-details">
-            { ispending && <h1>Loading...</h1> }
-            { error && <div>{ error }</div> }
-            { blog && (
-                <article>
-                    <h2>{ blog.title }</h2>
-                    <p><strong>Written by: { blog.author }</strong></p>
-                    <div>{ blog.body }</div>
-                    <button onClick={handleClick}>delete</button>
-                </article>
+        <div className="blog-details bg-white">
+            {isPending && <div className='bg-[#f4f4f4] flex justify-center text-[30px] mt-[35px] pt-[300px] pb-[300px]'>Loading Coffee...</div>}
+            {error && <div className='bg-[#f4f4f4] flex justify-center text-[30px] mt-[35px] pt-[300px] pb-[300px]'>A network error was encountered</div>}
+            { Coffee && (
+                Coffee.map((CoffeeInfo) => {
+                    return (
+                        <div key={CoffeeInfo.id} className="grid grid-cols-2">
+                            <div><img src={CoffeeInfo.image_url}/></div>
+                            <div>{CoffeeInfo.name}</div>
+                        </div>
+                    )
+                })
             )}
         </div>
     );
 }
  
-export default BlogDetails;
+export default CoffeeBeansDetails;

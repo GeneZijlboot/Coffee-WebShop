@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import HomePage from './Components/HomePage';
 import Shop from './Components/Shop';
 import ShoppingCart from './Components/ShoppingCart';
+import CoffeeBeansDetails from './Components/CoffeeBeansDetails';
 
 import './index.css';
 
@@ -15,7 +16,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/Shop" element={<Shop />} />
           <Route path="/ShoppingCart" element={<ShoppingCart />} />
-          {/* <Route path="/Shop/:id" element={<CoffeeBeansDetails />} /> */}
+          <Route path="/Shop/:id" element={<CoffeeBeansDetails />} />
         </Routes>
     </Router>
   )

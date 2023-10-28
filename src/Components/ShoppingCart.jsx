@@ -1,4 +1,5 @@
 import Copyright from "./Copyright";
+import { Link } from 'react-router-dom';
 
 function ShoppingCart() {
     return (
@@ -10,9 +11,7 @@ function ShoppingCart() {
                     return ( display ShoppingCart items);
                 }
             */}
-            <div className="bg-[#f4f4f4]">
-                <p className="flex justify-center mt-[200px]">on the ShoppingCart Page</p>
-            </div>
+            <Link className="flex justify-center bg-white text-[35px] mt-[35px] pt-[200px] pb-[300px]" to="/Shop">No Items Go back to Shop</Link>
             
             {/* COPYRIGHT SECTION*/}
             <div>
