@@ -26,10 +26,14 @@ body{
     @apply flex justify-center text-[#24415b] text-[25px];
 }
 
-.Button{
+.BuyButton{
     @apply bg-[#8aaac7]  text-[white] w-[100px] h-[40px] rounded-[15px];
 }
 
-.Button:hover{
+.BuyButton:hover{
     @apply bg-[#8aaac7]  text-[#24415b];
+}
+
+.NullButton{
+    @apply bg-[#9f362a] h-[60px] w-[150px] text-[white] rounded-[25px] text-[25px];
 }

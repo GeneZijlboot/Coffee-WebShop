@@ -8,7 +8,7 @@ function CoffeeBeansDetails() {
 
     return (  
         <div className="blog-details bg-white">
-            {isPending && <div className='bg-[#f4f4f4] flex justify-center text-[30px] mt-[35px] pt-[300px] pb-[300px]'>Loading Coffee...</div>}
+            {isPending && <div className='bg-[#f4f4f4] flex justify-center text-[30px] mt-[35px] pt-[300px] pb-[300px]'>Loading Specific Coffee...</div>}
             {error && <div className='bg-[#f4f4f4] flex justify-center text-[30px] mt-[35px] pt-[300px] pb-[300px]'>A network error was encountered</div>}
             { Coffee && (
                 Coffee.map((CoffeeInfo) => {
@@ -25,7 +25,7 @@ function CoffeeBeansDetails() {
                                         <p><strong>Weight: </strong>{CoffeeInfo.weight} gram</p>
                                         <p><strong>Roast level: </strong>{CoffeeInfo.roast_level}</p>
                                         <p><strong>Price: </strong>${CoffeeInfo.price}</p>
-                                        <button className='Button'>Buy</button>
+                                        <button className='BuyButton'>Buy</button>
                                     </div>
                                 </div>
                             </div>
