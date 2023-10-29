@@ -11,7 +11,6 @@ const useFetch = (url) => {
                 return res.json();
             })
             .then(data => {
-                console.log(data);
                 setCoffee(data)
                 setIsPending(false);
                 setError(null);

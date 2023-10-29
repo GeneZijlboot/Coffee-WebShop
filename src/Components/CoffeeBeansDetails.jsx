@@ -1,10 +1,20 @@
 import useFetch from '../useFetch';
 import { useParams }  from 'react-router-dom';
 import Copyright from './Copyright';
+import { PRODUCTS } from '../Products/BoughtProducts';
 
 function CoffeeBeansDetails() {
     const { id } = useParams()
     const { Coffee, error, isPending } = useFetch('https://fake-coffee-api.vercel.app/api/' + id);
+
+    const handleClick = () => {
+        console.log(PRODUCTS)
+        { Coffee && (
+            Coffee.map((CoffeeInfo) => {
+                PRODUCTS.push({ id:CoffeeInfo.id, url:CoffeeInfo.image_url , price:CoffeeInfo.price , name:CoffeeInfo.name});
+            })
+        )}
+    }
 
     return (  
         <div className="blog-details bg-white">
@@ -13,7 +23,7 @@ function CoffeeBeansDetails() {
             { Coffee && (
                 Coffee.map((CoffeeInfo) => {
                     return (
-                        <div>
+                        <div key={id}>
                             <div className='flex justify-center'>
                                 <div key={CoffeeInfo.id} className="grid grid-cols-2 w-[1200px] pt-[100px] pb-[100px]">
                                     <div><img className="pb-[50px]" src={CoffeeInfo.image_url}/></div>
@@ -25,7 +35,7 @@ function CoffeeBeansDetails() {
                                         <p><strong>Weight: </strong>{CoffeeInfo.weight} gram</p>
                                         <p><strong>Roast level: </strong>{CoffeeInfo.roast_level}</p>
                                         <p><strong>Price: </strong>${CoffeeInfo.price}</p>
-                                        <button className='BuyButton'>Buy</button>
+                                        <button onClick={handleClick} className='BuyButton'>Buy</button>
                                     </div>
                                 </div>
                             </div>
