@@ -41,7 +41,7 @@ function ShoppingCart({ SpecificCoffee, handleDeleteProduct , RemoveCartContent 
                 <div className='Sum'></div>
                 
                 <div className='flex gap-[20px] justify-end mb-[20px]'>
-                    <p className='text-[25px]'>Total : {TotalPrice}</p>
+                    <p className='text-[25px]'>Total :${TotalPrice}</p>
                     <p className='text-[25px]'>|</p>
                     <Link to="/"><p onClick={RemoveCartContent} className='CheckoutBtn'>Checkout</p></Link>
                 </div>
