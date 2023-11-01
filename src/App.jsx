@@ -9,16 +9,13 @@ import { useState } from 'react';
 import './index.css';
 
 function App() {
-  // Manage the SpecificCoffee state in the App component
   const [SpecificCoffee, setSpecificCoffee] = useState([]);
 
   const CoffeeAdd = (newCoffee) => {
-    // Update the SpecificCoffee state when adding coffee
     setSpecificCoffee((prevSpecificCoffee) => [...prevSpecificCoffee, newCoffee]);
   };
 
   const handleDeleteProduct = (productIndex) => {
-    // Use filter to create a new array without the product to delete
     setSpecificCoffee((prevSpecificCoffee) =>
       prevSpecificCoffee.filter((_, index) => index !== productIndex)
     );

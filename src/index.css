@@ -42,10 +42,18 @@ body{
     @apply bg-black h-[5px] w-[100px];
 }
 
-.DeleteBtn{
-    @apply  text-[25px] text-[white] flex justify-center p-[5px];
+.CheckoutBtn{
+    @apply text-[black] text-[25px] mr-[20px];
 }
 
-.DeleteBtn:hover{
-    @apply text-[25px] text-[#9f362a] flex justify-center p-[5px];
+.CheckoutBtn:hover{
+    @apply text-[#9f362a] text-[25px] mr-[20px];
+}
+
+.Devider{
+    @apply text-[white] text-[25px] p-[5px];
+}
+
+.Sum {
+    @apply h-[5px] bg-[black] m-[20px];
 }
