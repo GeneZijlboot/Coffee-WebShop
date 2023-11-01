@@ -37,3 +37,15 @@ body{
 .NullButton{
     @apply bg-[#9f362a] h-[60px] w-[150px] text-[white] rounded-[25px] text-[25px];
 }
+
+.SumLine{
+    @apply bg-black h-[5px] w-[100px];
+}
+
+.DeleteBtn{
+    @apply  text-[25px] text-[white] flex justify-center p-[5px];
+}
+
+.DeleteBtn:hover{
+    @apply text-[25px] text-[#9f362a] flex justify-center p-[5px];
+}
