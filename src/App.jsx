@@ -7,13 +7,26 @@ import CoffeeBeansDetails from './Components/CoffeeBeansDetails';
 import { useState } from 'react';
 
 import './index.css';
+import { useEffect } from 'react';
 
 function App() {
   const [SpecificCoffee, setSpecificCoffee] = useState([]);
+  const [TotalPrice, setTotalPrice] = useState([]);
   const RemoveArray = [];
+  console.log(TotalPrice);
+
+  useEffect(() => {
+    let totalPrice = 0;
+    SpecificCoffee.forEach((Coffee) => {
+      totalPrice += Coffee.Price;
+    });
+    setTotalPrice(totalPrice);
+  }, [SpecificCoffee]);
+  
 
   const CoffeeAdd = (newCoffee) => {
     setSpecificCoffee((prevSpecificCoffee) => [...prevSpecificCoffee, newCoffee]);
+    console.log(SpecificCoffee);
   };
 
   const handleDeleteProduct = (productIndex) => {
@@ -25,7 +38,6 @@ function App() {
   const RemoveCartContent = () => {
     setSpecificCoffee(RemoveArray);
   }
-  
 
   return (
     <Router>
@@ -40,6 +52,7 @@ function App() {
               handleDeleteProduct={handleDeleteProduct}
               RemoveCartContent={RemoveCartContent}
               SpecificCoffee={SpecificCoffee}
+              TotalPrice={TotalPrice}
             />
           }
         />

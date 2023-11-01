@@ -1,8 +1,10 @@
 import React from 'react';
+import { useEffect , useState } from 'react';
 import { Link } from 'react-router-dom';
 import Copyright from "./Copyright";
 
-function ShoppingCart({ SpecificCoffee, handleDeleteProduct , RemoveCartContent}) {
+function ShoppingCart({ SpecificCoffee, handleDeleteProduct , RemoveCartContent , TotalPrice }) {
+    
     if (SpecificCoffee.length === 0){
         return(
             <div>
@@ -14,7 +16,6 @@ function ShoppingCart({ SpecificCoffee, handleDeleteProduct , RemoveCartContent}
                         </Link>
                     </div>
                 </div>
-
                 <div>
                     <Copyright />
                 </div>
@@ -40,7 +41,7 @@ function ShoppingCart({ SpecificCoffee, handleDeleteProduct , RemoveCartContent}
                 <div className='Sum'></div>
                 
                 <div className='flex gap-[20px] justify-end mb-[20px]'>
-                    <p className='text-[25px]'>Total : $100</p>
+                    <p className='text-[25px]'>Total : {TotalPrice}</p>
                     <p className='text-[25px]'>|</p>
                     <Link to="/"><p onClick={RemoveCartContent} className='CheckoutBtn'>Checkout</p></Link>
                 </div>
