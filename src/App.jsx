@@ -10,6 +10,7 @@ import './index.css';
 
 function App() {
   const [SpecificCoffee, setSpecificCoffee] = useState([]);
+  const RemoveArray = [];
 
   const CoffeeAdd = (newCoffee) => {
     setSpecificCoffee((prevSpecificCoffee) => [...prevSpecificCoffee, newCoffee]);
@@ -20,6 +21,10 @@ function App() {
       prevSpecificCoffee.filter((_, index) => index !== productIndex)
     );
   };
+  
+  const RemoveCartContent = () => {
+    setSpecificCoffee(RemoveArray);
+  }
   
 
   return (
@@ -33,6 +38,7 @@ function App() {
           element={
             <ShoppingCart
               handleDeleteProduct={handleDeleteProduct}
+              RemoveCartContent={RemoveCartContent}
               SpecificCoffee={SpecificCoffee}
             />
           }

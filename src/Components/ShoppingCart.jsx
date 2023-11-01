@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Copyright from "./Copyright";
 
-function ShoppingCart({ SpecificCoffee, handleDeleteProduct }) {
+function ShoppingCart({ SpecificCoffee, handleDeleteProduct , RemoveCartContent}) {
     if (SpecificCoffee.length === 0){
         return(
             <div>
@@ -42,7 +42,7 @@ function ShoppingCart({ SpecificCoffee, handleDeleteProduct }) {
                 <div className='flex gap-[20px] justify-end mb-[20px]'>
                     <p className='text-[25px]'>Total : $100</p>
                     <p className='text-[25px]'>|</p>
-                    <Link to="/"><p className='CheckoutBtn'>Checkout</p></Link>
+                    <Link to="/"><p onClick={RemoveCartContent} className='CheckoutBtn'>Checkout</p></Link>
                 </div>
                 <div>
                     <Copyright />
