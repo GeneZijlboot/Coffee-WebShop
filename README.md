@@ -1,3 +1,3 @@
 # Coffee-WebShop
 
-https://coffee-webshop.vercel.app/Shop
+https://coffee-webshop.vercel.app
